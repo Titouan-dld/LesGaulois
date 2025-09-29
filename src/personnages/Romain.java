@@ -17,9 +17,24 @@ public class Romain {
 		System.out.println(prendreParole() + "\"" + texte + "\"");
 		
 	}
+	
+	private void recevoirCoup(int forceCoup) {
+		this.force = this.force - forceCoup;
+		if(this.force <1){
+			this.parler("J'abandonne")
+			
+		}
+		else {
+			this.parler("Aîe");
+		}
+	}
 
 	private String prendreParole() {
 		return "Le romain " + nom + " : ";
+	}
+	
+	public static void main(String[] args) {
+		Romain minus = new Romain("Minus", 6);
 	}
 	
 }

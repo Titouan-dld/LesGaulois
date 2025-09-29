@@ -22,4 +22,19 @@ public class Gaulois {
 		return "Le gaulois " + nom + " : ";
 	}
 
+	public String toString() {
+		return "Gaulois [nom=" + nom + ", force=" + force + "]";
+	}
+	
+	public void frapper(Romain romain) {
+		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
+		romain.recevoirCoup(force / 3);
+		
+	}
+	
+	public static void main(String[] args) {
+		Gaulois asterix = new Gaulois("Asterix", 8);
+	}
+
+
 }
