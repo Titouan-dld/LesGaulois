@@ -3,14 +3,20 @@ package personnages;
 public class Gaulois {
 	private String nom;
 	private int force;
+	private int effetPotion;
 	
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
+		this.effetPotion = 1;
 	}
 
 	public String getNom() {
 		return nom;
+	}
+	
+	public void boirePotion(int forcePotion) {
+		this.effetPotion = forcePotion;
 	}
 	
 	public void parler(String texte) {
@@ -28,12 +34,10 @@ public class Gaulois {
 	
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
-		romain.recevoirCoup(force / 3);
-		
-	}
-	
-	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("Asterix", 8);
+		romain.recevoirCoup(this.force*this.effetPotion / 3);
+		if(this.effetPotion >1) {
+			this.effetPotion = this.effetPotion-1;
+		}
 	}
 
 
