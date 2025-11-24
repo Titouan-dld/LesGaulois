@@ -46,10 +46,10 @@ public class Romain {
 			this.force -= forceCoup;
 		}
 		if(force == 0) {
-			equipementEjecte = ejecterEquipement();
 			parler("J'abandonne...");
 		}
 		else {
+			equipementEjecte = ejecterEquipement();
 			parler("Aïe");
 		}
 		return equipementEjecte;
@@ -111,6 +111,7 @@ public class Romain {
 				equipementEjecte[nbEquipementEjecte] = equipements[i];
 				nbEquipementEjecte++;
 				equipements[i] = null;
+				nbEquipement--;
 			}
 		}
 		return equipementEjecte;

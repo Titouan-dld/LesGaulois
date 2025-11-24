@@ -2,6 +2,7 @@ package personnages;
 
 import java.util.Arrays;
 
+import histoire.Musee;
 import objets.Equipement;
 
 public class Gaulois {
@@ -72,8 +73,21 @@ public class Gaulois {
 	            trophees[nbTrophees++] = newTrophees[i];
 	        }
 		}
+		
 	}
 	
+	public void faireUneDonnation(Musee musee) {
+		String texte = "Je donne au musee tous mes trophées ";
+		for(int i = 0; i<nbTrophees; i++) {
+			if(trophees[i] != null) {
+			musee.donnerTrophees(this, trophees[i]);
+			texte += "\n   -" + this.trophees[i];
+			this.trophees[i] = null;
+			}
+		}
+		nbTrophees = 0;
+		this.parler(texte);
+	}
 	
 
 }

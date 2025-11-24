@@ -33,10 +33,8 @@ public static void main(String[] args) {
 		asterix.frapper(milexcus);
 	} while (milexcus.getForce() > 0);
 	
-//	Partie a decommenter
-	
-//	Musee musee = new Musee();
-//	asterix.faireUneDonnation(musee);
+	Musee musee = new Musee();
+	asterix.faireUneDonnation(musee);
 
 
 }
