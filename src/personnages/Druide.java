@@ -30,13 +30,13 @@ public class Druide {
 	
 	public void booster(Gaulois gaulois) {
 		if (this.chaudron.resterPotion()) {
-			if (gaulois.getNom() == "Obelix") {
-				parler("Non, " + gaulois.getNom() + "Non !... Et tu le sais très bien !");
+			if ("Obélix".equals(gaulois.getNom())) {
+				parler("Non, " + gaulois.getNom() + " Non !... Et tu le sais très bien !");
 			}
 			else {
 				int forcePotion = this.chaudron.prendreLouche();
 				gaulois.boirePotion(forcePotion);
-				parler("Tiens " + gaulois.getNom() + "un peu de potion Magique.");
+				parler("Tiens " + gaulois.getNom() + " un peu de potion Magique.");
 			}
 		}
 		else {
